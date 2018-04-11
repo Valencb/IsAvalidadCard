@@ -1,2 +1,16 @@
-body
-{ background-color: #FF0000; }
+#one
+{
+  color: black;
+  background-color: orange;
+  border: 8px groove blue;
+  font-size: 40px;
+  text-align: center;
+}
+#dos
+{
+  color: black;
+  background-color: orange;
+  border: 8px groove blue;
+  font-size: 50px;
+  text-align: center;
+}

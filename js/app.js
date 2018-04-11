@@ -1,12 +1,12 @@
 
-function isValidtarjeta(tarjeta) {
+function isValidCard(tarjeta) {
 //Se coloca una variable numerica para poder hacer las operaciones
   var numero = 0;
 //Ingresar los datos, si tiene espacios o esta vacio y si no son numeros regresar a prompt
   tarjeta = prompt ('Ingresa un número de tarjeta');
     if (tarjeta === null || (isNaN(tarjeta) === true) ){
       alert('Ingrese un número de tarjeta válido');
-      return isValidtarjeta(tarjeta);
+      return isValidCard(tarjeta);
       }
 //Se van a iterar caracter numerico por caracter
   for (var j= 0; j< tarjeta.length; j++){
@@ -15,7 +15,7 @@ function isValidtarjeta(tarjeta) {
   }
   if (numero > 0){
     alert('El número de tarjeta contiene letras o carácteres especiales, ingrese un número de tarjeta válido.');
-    return isValidtarjeta(tarjeta);
+    return isValidCard(tarjeta);
   }
   //Despues de validar si los digitos con correcto
   /*Se estara iterando numero a numero, con un array inverso, se estaran sumando y invirtiendo el array
@@ -28,9 +28,9 @@ function isValidtarjeta(tarjeta) {
 //la tarjeta se regresa al prompt
     if (tarjeta.length < 13 || tarjeta.length > 19){
         alert('El número de tarjeta tiene que ser mayor a 13 y menor a 19 dígitos.');
-      return isValidtarjeta(tarjeta);
+      return isValidCard(tarjeta);
     }
-//Mientras los numeros sea mayo o igual a 0 se estara tomando cada caracter
+//Mientras los numeros sea mayor o igual a 0 se estara tomando cada caracter
     while (i >= 0){
 //Se estaran tomando cada caracter numerico enteros ingresado en tarjeta
         num = parseInt(tarjeta.charAt(i), 10);
@@ -38,7 +38,7 @@ function isValidtarjeta(tarjeta) {
         if (isNaN(num)){
             return false;
         }
-        //Válida el bit true o false de imparidad
+        //Válida el cambio true o false de imparidad
         if (alt) {
             num *= 2;
             if (num > 9){
@@ -53,15 +53,14 @@ function isValidtarjeta(tarjeta) {
         i--;
     }
     //Determina si la tarjeta es válida
-    if (sum % 10 === 0){
-      return ('Tarjeta válida');
+    if (sum % 10 === 0 && sum!==0){
+      return alert('Tarjeta válida');
     }
       else{
-      return ('Tarjeta inválida');
+      return alert('Tarjeta inválida');
       }
 
 
 }
 
-isValidtarjeta();
-document.getElementById('boldStuff2').innerHTML = userInput
+isValidCard();
