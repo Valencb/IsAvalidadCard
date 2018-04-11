@@ -1,0 +1,1 @@
+var hola=prompt("hola");
